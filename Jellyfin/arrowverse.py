@@ -3,18 +3,19 @@ import requests
 import sys
 import logging
 from dotenv import load_dotenv
+import commons.formatter
 
 # Load environment variables from a .env file
 load_dotenv()
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+commons.formatter.configure_logging()
 
 # 🔹 CONFIGURE THESE
 JELLYFIN_SERVER = os.getenv("JELLYFIN_SERVER")
 API_KEY = os.getenv("API_KEY")
 USER_NAME = os.getenv("USER_NAME")
-USER_ID = "" # Will be fetched later
+USER_ID = ""  # Will be fetched later
 
 # 🔹 List of Arrowverse series (https://en.wikipedia.org/wiki/Arrowverse)
 ARROWVERSE_SHOWS = [

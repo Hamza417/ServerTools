@@ -13,9 +13,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # 🔹 CONFIGURE THESE
 JELLYFIN_SERVER = os.getenv("JELLYFIN_SERVER")
 API_KEY = os.getenv("API_KEY")
-USER_ID = os.getenv("USER_ID")
+USER_NAME = os.getenv("USER_NAME")
+USER_ID = "" # Will be fetched later
 
-# 🔹 List of Arrowverse series (Modify if needed)
+# 🔹 List of Arrowverse series (https://en.wikipedia.org/wiki/Arrowverse)
 ARROWVERSE_SHOWS = [
     "Arrow", "The Flash", "Supergirl", "DC's Legends of Tomorrow",
     "Batwoman", "Black Lightning", "Superman & Lois", "Constantine",
@@ -33,14 +34,6 @@ def make_request(url, params=None):
         return None
 
 
-def check_user():
-    url = f"{JELLYFIN_SERVER}/Users/Public?api_key={API_KEY}"
-    response = make_request(url)
-    if response:
-        logging.info("User ID fetched successfully!")
-        logging.info(get_user_id())
-
-
 def get_user_id():
     url = f"{JELLYFIN_SERVER}/Users?api_key={API_KEY}"
     response = make_request(url)
@@ -49,7 +42,12 @@ def get_user_id():
             users = response.json()
             for user in users:
                 logging.info(f"User ID: {user['Id']}, Name: {user['Name']}")
-            return users[0]['Id']  # Return the first user's ID for now
+                if user['Name'] == USER_NAME:
+                    logging.info(f"Found user: {user['Name']}")
+                    return user['Id']
+            else:
+                logging.warning(f"User not found: {USER_NAME}")
+                raise NameError("User not found!")
         except ValueError:
             logging.error("Error parsing response.")
     return None
@@ -144,8 +142,8 @@ def create_playlist(_episode_ids):
 
 
 if __name__ == "__main__":
-    logging.info("Checking Jellyfin user...")
-    check_user()
+    logging.info(f"Checking Jellyfin user for {USER_NAME}...")
+    USER_ID = get_user_id()
 
     logging.info("Fetching Arrowverse episodes from Jellyfin...")
     episodes = get_episodes()

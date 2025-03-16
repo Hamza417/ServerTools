@@ -68,12 +68,14 @@ browse_directory() {
         if [[ "$input" == "exit" ]]; then
             exit 0
         elif [[ "$input" == ".." ]]; then
-            if [[ -z "$path" ]]; then
-                echo "Already at root directory."
-            else
-                path="${path%/*}"
-                path="${path#/}"  # Remove leading slash if needed
-            fi
+                if [[ -z "$path" || "$path" == */* ]]; then
+                    path="${path%/*}"
+                else
+                    path=""
+                fi
+                if [[ "$path" == "$remote" ]]; then
+                    path=""
+                fi
         elif [[ "$input" =~ ^[0-9]+$ ]] && (( input > 0 && input <= ${#items[@]} )); then
             selected_item="${items[input-1]}"
             if [[ "$selected_item" == */ ]]; then

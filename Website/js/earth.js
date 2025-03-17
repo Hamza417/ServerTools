@@ -9,14 +9,14 @@ document.body.appendChild(renderer.domElement);
 
 // Load Earth Texture
 const textureLoader = new THREE.TextureLoader();
-textureLoader.load('textures/alpha.jpg', (texture) => {
+textureLoader.load('textures/alpha.png', (texture) => {
     createDottedEarth(texture);
 });
 
 function createDottedEarth(texture) {
     const sphereGeometry = new THREE.BufferGeometry();
     const radius = 5;
-    const segments = 64;
+    const segments = 256;
     const positions = [];
     const colors = [];
     const color = new THREE.Color();
@@ -36,13 +36,13 @@ function createDottedEarth(texture) {
             const phi = (j / segments) * 2 * Math.PI;
 
             const x = radius * Math.sin(theta) * Math.cos(phi);
-            const y = radius * Math.sin(theta) * Math.sin(phi);
-            const z = radius * Math.cos(theta);
+            const z = radius * Math.sin(theta) * Math.sin(phi);  // Swapped with Y
+            const y = radius * Math.cos(theta);  // Now Y represents the up direction
 
             positions.push(x, y, z);
 
             // Convert spherical coordinates to UV mapping
-            const u = j / segments;
+            const u = 1 - (j / segments);  // Flip the u coordinate
             const v = i / segments;
             const pixelX = Math.floor(u * canvas.width);
             const pixelY = Math.floor(v * canvas.height);
@@ -63,21 +63,27 @@ function createDottedEarth(texture) {
 
     const sphereMaterial = new THREE.PointsMaterial({
         vertexColors: true,
-        size: 0.05,
+        size: 0.03,  // Reduce size
+        sizeAttenuation: true,  // Makes points scale correctly with distance
+        transparent: true,
+        opacity: 0.8  // Optional: Smooth look
     });
 
     const sphere = new THREE.Points(sphereGeometry, sphereMaterial);
     scene.add(sphere);
 
     camera.position.z = 10;
+    sphere.rotation.y = Math.PI / 2;
 
     // Mouse Drag Rotation
     let isDragging = false;
     let previousMouseX = 0;
+    let previousMouseY = 0;
 
     document.addEventListener("mousedown", (event) => {
         isDragging = true;
         previousMouseX = event.clientX;
+        previousMouseY = event.clientY;
     });
 
     document.addEventListener("mouseup", () => {
@@ -87,15 +93,18 @@ function createDottedEarth(texture) {
     document.addEventListener("mousemove", (event) => {
         if (isDragging) {
             let deltaX = event.clientX - previousMouseX;
+            let deltaY = event.clientY - previousMouseY;
             sphere.rotation.y += deltaX * 0.005;
+            sphere.rotation.x += deltaY * 0.005;
             previousMouseX = event.clientX;
+            previousMouseY = event.clientY;
         }
     });
 
     // Animation Loop
     function animate() {
         requestAnimationFrame(animate);
-        sphere.rotation.y += 0.002;  // Slow rotation effect
+        sphere.rotation.y += 0.0002;  // Slow rotation effect
         renderer.render(scene, camera);
     }
 

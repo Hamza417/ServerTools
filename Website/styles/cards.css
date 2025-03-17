@@ -22,7 +22,7 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
+    cursor: none;
 }
 .card:hover {
     height: 200px;
@@ -30,13 +30,13 @@
 .card h1 {
     display: flex;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 100;
 }
 .card h3 {
     display: flex;
     margin-top: 5px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 .card p {

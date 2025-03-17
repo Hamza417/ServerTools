@@ -3,7 +3,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.m
 // Scene Setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -16,7 +16,7 @@ textureLoader.load('textures/alpha.png', (texture) => {
 function createDottedEarth(texture) {
     const sphereGeometry = new THREE.BufferGeometry();
     const radius = 5;
-    const segments = 256;
+    const segments = 512;  // Increased segments for smoother sphere
     const positions = [];
     const colors = [];
     const color = new THREE.Color();
@@ -54,6 +54,12 @@ function createDottedEarth(texture) {
             const b = imageData[index + 2] / 255;
             color.setRGB(r, g, b);
 
+            // Simulate lighting effect
+            const lightDirection = new THREE.Vector3(1, 1, 1).normalize();
+            const pointNormal = new THREE.Vector3(x, y, z).normalize();
+            const lightIntensity = Math.max(pointNormal.dot(lightDirection), 0.2);  // Ensure minimum light intensity
+            color.multiplyScalar(lightIntensity);
+
             colors.push(color.r, color.g, color.b);
         }
     }
@@ -63,10 +69,10 @@ function createDottedEarth(texture) {
 
     const sphereMaterial = new THREE.PointsMaterial({
         vertexColors: true,
-        size: 0.03,  // Reduce size
+        size: 0.02,  // Adjusted size
         sizeAttenuation: true,  // Makes points scale correctly with distance
         transparent: true,
-        opacity: 0.8  // Optional: Smooth look
+        opacity: 0.9  // Adjusted opacity
     });
 
     const sphere = new THREE.Points(sphereGeometry, sphereMaterial);

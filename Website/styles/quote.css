@@ -1,0 +1,11 @@
+.quote {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 100;
+    max-width: 20%;
+    text-align: left;
+    line-height: 1.2;
+}

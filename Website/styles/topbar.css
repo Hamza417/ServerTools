@@ -1,0 +1,37 @@
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0); /* Transparent */
+}
+
+.topbar img {
+    height: 40px;
+    width: 40px;
+}
+
+.topbar .links {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    margin-right: 40px;
+    justify-content: flex-end; /* Aligns links to the right */
+}
+
+.topbar .links a {
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.75s;
+    text-decoration: none;
+}
+
+.topbar .links a:hover {
+    color: #99a3a4;
+    text-decoration: none;
+}

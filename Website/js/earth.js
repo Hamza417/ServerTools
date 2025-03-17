@@ -36,8 +36,8 @@ function createDottedEarth(texture) {
             const phi = (j / segments) * 2 * Math.PI;
 
             const x = radius * Math.sin(theta) * Math.cos(phi);
-            const z = radius * Math.sin(theta) * Math.sin(phi);  // Swapped with Y
-            const y = radius * Math.cos(theta);  // Now Y represents the up direction
+            const z = radius * Math.sin(theta) * Math.sin(phi);
+            const y = radius * Math.cos(theta);
 
             positions.push(x, y, z);
 
@@ -69,10 +69,10 @@ function createDottedEarth(texture) {
 
     const sphereMaterial = new THREE.PointsMaterial({
         vertexColors: true,
-        size: 0.02,  // Adjusted size
+        size: 0.02, // Size of the points
         sizeAttenuation: true,  // Makes points scale correctly with distance
         transparent: true,
-        opacity: 0.9  // Adjusted opacity
+        opacity: 0.9  // Opacity of the points
     });
 
     const sphere = new THREE.Points(sphereGeometry, sphereMaterial);

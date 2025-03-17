@@ -9,6 +9,7 @@
     left: 40px;
     align-items: flex-end; /* Keeps non-hovered cards anchored at the bottom */
 }
+
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -16,29 +17,37 @@
     padding: 20px;
     width: 250px;
     height: 100px;
-    transition: height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     overflow: hidden;
     display: block;
     flex-direction: column;
     text-decoration: none;
     color: inherit;
     cursor: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .card:hover {
     height: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
 }
+
 .card h1 {
     display: flex;
     margin: 0;
     font-size: 3rem;
     font-weight: 100;
 }
+
 .card h3 {
     display: flex;
     margin-top: 5px;
     font-size: 1.5rem;
     font-weight: 400;
 }
+
 .card p {
     display: flex;
     margin: 10px 0 0;
@@ -47,6 +56,7 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
 .card:hover p {
     opacity: 1;
 }

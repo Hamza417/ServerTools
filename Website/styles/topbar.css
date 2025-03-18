@@ -14,6 +14,13 @@
     width: 40px;
 }
 
+.topbar .author {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: white;
+    margin-right: auto; /* Pushes author to the left */
+}
+
 .topbar .links {
     flex: 1; /* Takes up remaining space */
     display: flex;

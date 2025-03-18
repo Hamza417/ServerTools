@@ -16,7 +16,7 @@ textureLoader.load('textures/alpha.png', (texture) => {
 function createDottedEarth(texture) {
     const sphereGeometry = new THREE.BufferGeometry();
     const radius = 5;
-    const segments = 750;  // Increase segments for smoother sphere
+    const segments = 768;  // Increase segments for smoother sphere
     const positions = [];
     const colors = [];
     const color = new THREE.Color();

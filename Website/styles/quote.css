@@ -1,11 +1,33 @@
 .quote {
     position: absolute;
     left: 10%;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
-    font-size: 4rem;
-    font-weight: 100;
-    max-width: 20%;
+    font-size: 5rem;
+    font-weight: 700;
+    max-width: 40%;
     text-align: left;
     line-height: 1.2;
+}
+
+.wrap {
+    color: #c0392b;
+}
+
+.sen_1 {
+    color: white;
+}
+
+.sen_2 {
+    color: #c0392b;
+}
+
+.sen_3 {
+    color: white;
+}
+
+.author {
+    font-size: 3rem;
+    font-weight: 200;
+    color: white;
 }

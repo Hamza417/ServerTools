@@ -16,7 +16,7 @@ textureLoader.load('textures/alpha.png', (texture) => {
 function createDottedEarth(texture) {
     const sphereGeometry = new THREE.BufferGeometry();
     const radius = 5;
-    const segments = 512;  // Increased segments for smoother sphere
+    const segments = 750;  // Increase segments for smoother sphere
     const positions = [];
     const colors = [];
     const color = new THREE.Color();
@@ -57,7 +57,7 @@ function createDottedEarth(texture) {
             // Simulate lighting effect
             const lightDirection = new THREE.Vector3(1, 1, 1).normalize();
             const pointNormal = new THREE.Vector3(x, y, z).normalize();
-            const lightIntensity = Math.max(pointNormal.dot(lightDirection), 0.2);  // Ensure minimum light intensity
+            const lightIntensity = Math.max(pointNormal.dot(lightDirection), 0.1);  // Ensure minimum light intensity
             color.multiplyScalar(lightIntensity);
 
             colors.push(color.r, color.g, color.b);

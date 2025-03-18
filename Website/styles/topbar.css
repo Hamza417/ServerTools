@@ -24,7 +24,6 @@
 .topbar .links {
     flex: 1; /* Takes up remaining space */
     display: flex;
-    margin-right: 40px;
     justify-content: flex-end; /* Aligns links to the right */
 }
 

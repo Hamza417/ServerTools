@@ -27,7 +27,7 @@ I have also created a homepage hosted on my homeserver.
 You can visit the [homepage here](https://cloud417.space/), but it's not optimized enough 
 for mobile devices yet so a PC is recommended for viewing it. I don't know much webdev
 so only skimmed through the basics and made it in a less than a hour. Also, I live in a area with lots
-of power outages so the server will most likely be down most of the time.
+of power outages so the server is likely be down most of the time.
 
 My ISP put me behind CGNAT and it's the only one I've got in my area so the server
 is being redirected through CF Tunnel (no direct ports).

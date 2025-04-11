@@ -20,14 +20,18 @@ frequently or often to do things on my server or automate something.
 - Run the files/scripts as needed.
 
 ## Webpage
-I have also created a homepage hosted on my homeserver.
+I have also created two homepages hosted on the homeserver.
+
+![](terminal/assets/scr_01.png)
+
+You can visit the [terminal here](https://cloud417.space/).
+
+The [old page was moved here](https://old.cloud417.space). It's not optimized
+for mobile devices yet so a PC is recommended for viewing it. I don't know much webdev
+so only skimmed through the basics and made it in a less than an hour.
 
 ![](Website/assets/scr_01.png)
 
-You can visit the [homepage here](https://cloud417.space/), but it's not optimized enough 
-for mobile devices yet so a PC is recommended for viewing it. I don't know much webdev
-so only skimmed through the basics and made it in a less than a hour. Also, I live in a area with lots
-of power outages so the server is likely be down most of the time.
-
-My ISP put me behind CGNAT and it's the only one I've got in my area so the server
-is being redirected through CF Tunnel (no direct ports).
+I like both of them but second could use some improvements.
+Lastly, since it's a
+homeserver, it will likely be down most of the time.

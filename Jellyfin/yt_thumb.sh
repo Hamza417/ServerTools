@@ -54,6 +54,14 @@ if [ ! -d "$DIRECTORY" ]; then
     exit 1
 fi
 
+# Display mode info
+if $QUIET; then
+    $QUIET || echo "Running in quiet mode: No output will be shown unless an error occurs."
+fi
+if $MISSING_ONLY; then
+    $QUIET || echo "Running in 'missing-only' mode: Only missing thumbnails will be downloaded."
+fi
+
 EXTENSIONS=("mp4" "mkv" "avi" "mov" "flv" "webm")
 
 for file in "$DIRECTORY"/*; do
@@ -70,9 +78,12 @@ for file in "$DIRECTORY"/*; do
 
                 # Skip if missing-only is active and thumbnail exists
                 if $MISSING_ONLY && [ -f "$output_path" ]; then
-                    $QUIET || echo "Thumbnail already exists: $output_path"
+                    $QUIET || echo "Skipping: Thumbnail already exists for '$filename'."
                     break
                 fi
+
+                # Notify about the thumbnail download process
+                $QUIET || echo "Downloading thumbnail for '$filename'..."
 
                 # Try maxresdefault first
                 url="https://img.youtube.com/vi/$video_id/maxresdefault.jpg"

@@ -56,10 +56,10 @@ fi
 
 # Display mode info
 if $QUIET; then
-    echo "Running in quiet mode: No output will be shown unless an error occurs."
+    echo "[YT_THUMB] Running in quiet mode: No output will be shown unless an error occurs."
 fi
 if $MISSING_ONLY; then
-    echo "Running in 'missing-only' mode: Only missing thumbnails will be downloaded."
+    echo "[YT_THUMB] Running in 'missing-only' mode: Only missing thumbnails will be downloaded."
 fi
 
 EXTENSIONS=("mp4" "mkv" "avi" "mov" "flv" "webm")

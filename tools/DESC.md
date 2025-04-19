@@ -34,3 +34,14 @@ Scrape metadata from YouTube of all videos in the specified directory. The filen
 ```bash
 python yt_metadata.py path ## use -h for help
 ```
+
+### yt_toolkit.py
+
+Merges functions from `yt_thumb.py` and `yt_metadata.py` into one script. It can scrape both thumbnails
+and metadata from YouTube
+
+#### Usage
+
+```bash
+python yt_toolkit.py path --thumb --nfo ## use -h for help
+```

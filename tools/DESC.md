@@ -10,3 +10,27 @@ and writes the translated content to a new file.
 ```bash
 python translate.py source target from_lang to_lang
 ```
+
+#
+
+### yt_thumb.py
+
+Scrape thumbnails from YouTube of all videos in the specified directory. The filename should have the IDs in square brackets
+`filename [video_id].ext` for the script to work. The `yt_thumb.sh` does the same thing.
+
+#### Usage
+
+```bash
+python yt_thumb.py path ## use -h for help
+```
+
+### yt_metadata.py
+
+Scrape metadata from YouTube of all videos in the specified directory. The filename should have the IDs in square
+`filename [video_id].ext` for the script to work.
+
+#### Usage
+
+```bash
+python yt_metadata.py path ## use -h for help
+```

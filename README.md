@@ -16,6 +16,7 @@ frequently or often to do things on my server or automate something.
   SERVER_IP=xxx.xxx.xxx.xx
   SERVER_USERNAME=xxxxxxxx
   SERVER_PASSWORD=xxxxxx
+  YOUTUBE_API_KEY=AIZa....
   ```
 - Run the files/scripts as needed.
 

@@ -21,11 +21,7 @@ frequently or often to do things on my server or automate something.
 - Run the files/scripts as needed.
 
 ## Webpage
-I have also created two homepages hosted on the homeserver.
-
-![](terminal/assets/scr_01.png)
-
-You can visit the [terminal here](https://cloud417.space/).
+The main domain redirects to a CasaOS mainpage [here](https://cloud417.space/).
 
 The [old page was moved here](https://old.cloud417.space). It's not optimized
 for mobile devices yet so a PC is recommended for viewing it. I don't know much webdev

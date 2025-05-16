@@ -32,3 +32,13 @@ so only skimmed through the basics and made it in a less than an hour.
 I like both of them but second could use some improvements.
 Lastly, since it's a
 homeserver, it will likely be down most of the time.
+
+## List of Active Domains
+
+- [CasaOS](https://cloud417.space)
+- [3D Earth Homepage](https://old.cloud417.space)
+- [Jellyin](https://jellyfin.cloud417.space)
+- [qBittorrent](https://torrent.cloud417.space)
+- [PiHole](https://pihole.cloud417.space)
+- [File Manager](https://files.cloud417.space)
+- [Speedtest](https://speedtest.cloud417.space)

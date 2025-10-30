@@ -31,10 +31,12 @@ This could use some improvements. Lastly, since it's a
 homeserver, it will likely be down most of the time.
 
 ## List of Active Domains
-- [3D Earth Homepage](https://old.cloud417.space)
-- [Jellyin](https://jellyfin.cloud417.space)
-- [qBittorrent](https://torrent.cloud417.space)
+- ~[3D Earth Homepage](https://old.cloud417.space)~
+- ~[Jellyin](https://jellyfin.cloud417.space)~
+- ~[qBittorrent](https://torrent.cloud417.space)~
 - ~[PiHole](https://pihole.cloud417.space)~
-- [File Manager](https://files.cloud417.space)
-- [Speedtest](https://speedtest.cloud417.space)
-- [File Sharing](https://share.cloud417.space)
+- ~[File Manager](https://files.cloud417.space)~
+- ~[Speedtest](https://speedtest.cloud417.space)~
+- ~[File Sharing](https://share.cloud417.space)~
+
+I have shutdown the server on 4 Oct 2025 and repurposed the computer for a different hobby.
